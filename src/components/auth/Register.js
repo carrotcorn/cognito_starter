@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import FormErrors from "../FormErrors";
 import Validate from "../util/Validation";
 
-class Register extends Component { 
+class Register extends Component {
   //state variables for form inputs and errors
-    state = {
+  state = {
     username: "",
     email: "",
     password: "",
@@ -33,7 +33,7 @@ class Register extends Component {
     const error = Validate(event, this.state);
     if (error) {
       this.setState({
-        errors: { ...this.state.errors, ...error }
+        errors: { ...this.state.errors, ...error } // ...means its adding on
       });
     }
     //Integrate Cognito here on valid form submission
@@ -55,8 +55,8 @@ class Register extends Component {
           <form onSubmit={this.handleSubmit}>
             <div className="field">
               <p className="control has-icons-left">
-                <input 
-                  className="input" 
+                <input
+                  className="input"
                   type="text"
                   id="username"
                   placeholder="Enter username"
@@ -70,8 +70,8 @@ class Register extends Component {
             </div>
             <div className="field">
               <p className="control has-icons-left">
-                <input 
-                  className="input" 
+                <input
+                  className="input"
                   type="email"
                   id="email"
                   placeholder="Enter email"
@@ -85,8 +85,8 @@ class Register extends Component {
             </div>
             <div className="field">
               <p className="control has-icons-left">
-                <input 
-                  className="input" 
+                <input
+                  className="input"
                   type="password"
                   id="password"
                   placeholder="Password"
@@ -100,8 +100,8 @@ class Register extends Component {
             </div>
             <div className="field">
               <p className="control has-icons-left">
-                <input 
-                  className="input" 
+                <input
+                  className="input"
                   type="password"
                   id="confirmpassword"
                   placeholder="Confirm password"

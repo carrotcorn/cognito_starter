@@ -22,7 +22,7 @@ class LogIn extends Component {
   handleSubmit = async event => {
     //Prevent page reload
     event.preventDefault();
-    
+
     //Form validation
     this.clearErrors();
     const error = Validate(event, this.state);
@@ -51,8 +51,8 @@ class LogIn extends Component {
           <form onSubmit={this.handleSubmit}>
             <div className="field">
               <p className="control has-icons-left">
-                <input 
-                  className="input" 
+                <input
+                  className="input"
                   type="text"
                   id="username"
                   placeholder="Enter username or email"
@@ -66,8 +66,8 @@ class LogIn extends Component {
             </div>
             <div className="field">
               <p className="control has-icons-left">
-                <input 
-                  className="input" 
+                <input
+                  className="input"
                   type="password"
                   id="password"
                   placeholder="Password"
