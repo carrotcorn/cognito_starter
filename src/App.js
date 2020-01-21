@@ -9,6 +9,7 @@ import LogIn from './components/auth/LogIn';
 import { Auth } from 'aws-amplify';
 import ForgotPassword from './components/auth/ForgotPassword';
 import ForgotPasswordSubmit from './components/auth/ForgotPasswordSubmit';
+import ChangePassword from './components/auth/ChangePassword'
 import ChangePasswordConfirmation from './components/auth/ChangePasswordConfirmation';
 
 class App extends Component {
@@ -63,7 +64,10 @@ class App extends Component {
 
               <Route exact path="/ForgotPassword" render={(props) => <ForgotPassword  {...props} auth={authProps} />} />
               <Route exact path="/ForgotPasswordSubmit" render={(props) => <ForgotPasswordSubmit  {...props} auth={authProps} />} />
+
+              <Route exact path="/ChangePassword" render={(props) => <ChangePassword {...props} auth={authProps} />} />
               <Route exact path="/ChangePasswordConfirmation" render={(props) => <ChangePasswordConfirmation {...props} auth={authProps} />} />
+
             </Switch>
           </div>
         </Router>
