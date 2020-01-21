@@ -32,21 +32,21 @@ class ForgotPassword extends Component {
       this.setState({
         errors: { ...this.state.errors, ...error }
       });
-    }
-    //Integrate Cognito here on valid form submission
-    //this is the await method below
-    try {
-      await Auth.forgotPassword(this.state.email)
-      this.props.history.push("/forgotpasswordsubmit");
-    } catch (error) {
-      let err = null;
-      !error.message ? err = { "message": error } : err = error;
-      this.setState({
-        errors: {
-          ...this.state.error,
-          cognito: err
-        }
-      })
+    } else {
+      //Integrate Cognito here on valid form submission
+      try {
+        await Auth.forgotPassword(this.state.email)
+        this.props.history.push("/forgotpasswordsubmit");
+      } catch (error) {
+        let err = null;
+        !error.message ? err = { "message": error } : err = error;
+        this.setState({
+          errors: {
+            ...this.state.error,
+            cognito: err
+          }
+        })
+      }
     }
   };
 

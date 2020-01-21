@@ -7,8 +7,9 @@ import Register from './components/auth/Register';
 import Welcome from './components/auth/Welcome';
 import LogIn from './components/auth/LogIn';
 import { Auth } from 'aws-amplify';
-// import ForgotPassword from './components/auth/ForgotPassword';
-// import ForgotPasswordSubmit from './components/auth/ForgotPasswordSubmit';
+import ForgotPassword from './components/auth/ForgotPassword';
+import ForgotPasswordSubmit from './components/auth/ForgotPasswordSubmit';
+import ChangePasswordConfirmation from './components/auth/ChangePasswordConfirmation';
 
 class App extends Component {
   state = {
@@ -56,12 +57,13 @@ class App extends Component {
             <Navbar auth={authProps} />
             <Switch>
               <Route exact path="/" render={(props) => <Home  {...props} auth={authProps} />} />
-              <Route exact path="/register" render={(props) => <Register  {...props} auth={authProps} />} />
-              <Route exact path="/welcome" render={(props) => <Welcome  {...props} auth={authProps} />} />
-              <Route exact path="/login" render={(props) => <LogIn  {...props} auth={authProps} />} />
+              <Route exact path="/Register" render={(props) => <Register  {...props} auth={authProps} />} />
+              <Route exact path="/Welcome" render={(props) => <Welcome  {...props} auth={authProps} />} />
+              <Route exact path="/LogIn" render={(props) => <LogIn  {...props} auth={authProps} />} />
 
-              <Route exact path="/forgotpassword" render={(props) => <ForgotPassword  {...props} auth={authProps} />} />
-              <Route exact path="/forgotpasswordsubmit" render={(props) => <ForgotPasswordSubmit  {...props} auth={authProps} />} />
+              <Route exact path="/ForgotPassword" render={(props) => <ForgotPassword  {...props} auth={authProps} />} />
+              <Route exact path="/ForgotPasswordSubmit" render={(props) => <ForgotPasswordSubmit  {...props} auth={authProps} />} />
+              <Route exact path="/ChangePasswordConfirmation" render={(props) => <ChangePasswordConfirmation {...props} auth={authProps} />} />
             </Switch>
           </div>
         </Router>
